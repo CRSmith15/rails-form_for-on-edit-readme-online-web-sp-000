@@ -843,3 +843,32 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/posts/1/edit" for 76.76.92.90 at 2020-07-03 21:13:42 +0000
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/posts/1" for 76.76.92.90 at 2020-07-03 21:13:46 +0000
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gBhWSdf5gw3jDOkDL7NfVMI9reT8flyFY7xdbSVAhbhvEolEeqIRg925VwN1jkYypczROX0hyxhIvv8lkMNOlQ==", "post"=>{"title"=>"Rails Introduction Quiz", "description"=>"asdfasdfhahahhaahha"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "posts" SET "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["description", "asdfasdfhahahhaahha"], ["updated_at", "2020-07-03 21:13:46.757178"], ["id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://67.205.152.27:43424/posts/1
+Completed 302 Found in 12ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/posts/1" for 76.76.92.90 at 2020-07-03 21:13:46 +0000
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.1ms)
+
+
